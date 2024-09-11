@@ -15,7 +15,7 @@ final class ContentViewController: NSSplitViewController {
 
         self.splitViewItems = [
             NSSplitViewItem(sidebarWithViewController: SidebarViewController()),
-            NSSplitViewItem(viewController: .init()),
+            NSSplitViewItem(viewController: NSViewController()),
         ]
     }
 }

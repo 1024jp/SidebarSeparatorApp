@@ -9,15 +9,15 @@ import AppKit
 
 final class WindowController: NSWindowController, NSWindowDelegate {
     
-    init() {
+    init(viewController: NSViewController) {
         
-        let window = NSWindow(contentViewController: ContentViewController())
+        let window = NSWindow(contentViewController: viewController)
         window.styleMask.update(with: .fullSizeContentView)
         window.titlebarSeparatorStyle = .automatic
+        window.animationBehavior = .documentWindow
         
-        let toolbar = NSToolbar(identifier: "main")
-        window.toolbarStyle = .unified
-        window.toolbar = toolbar
+        window.toolbar = NSToolbar(identifier: "main")
+        window.titlebarSeparatorStyle = .automatic
         
         super.init(window: window)
         
@@ -27,6 +27,6 @@ final class WindowController: NSWindowController, NSWindowDelegate {
     
     required init?(coder: NSCoder) {
         
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
 }

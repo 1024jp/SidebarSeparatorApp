@@ -20,6 +20,7 @@ final class SidebarViewController: NSViewController {
         
         let scrollView = NSScrollView()
         scrollView.documentView = outlineView
+        scrollView.drawsBackground = false
         
         self.view = NSView()
         self.view.addSubview(scrollView)
